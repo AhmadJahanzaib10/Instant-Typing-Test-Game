@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #17a2b8;
+}
+.container{
+    width: 550px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+}
+.col{
+    padding: 13px 15px 0px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.typing-text::-webkit-scrollbar{
+    width: 0px;
+}
+.typing-text{
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.typing-text p{
+    font-size: 16px;
+    letter-spacing: 1px;
+    word-break: break-all;
+    text-align: justify;
+}
+.typing-text p span{
+    position: relative;
+}
+.controls{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    padding-top: 5px;
+}
+.details{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: calc(100% - 80px);
+}
+.details li{
+    display: flex;
+    align-items: center;
+    height: 24px;
+}
+.details li:not(:first-child){
+    border-left: 1px solid #ccc;
+    padding-left: 12px;
+}
+.details li span{
+    margin-left: 5px;
+    font-size: 15px;
+}
+.details li b{
+    font-weight: 500;
+}
+.again{
+    background-color: #17a2b8;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 8px 6px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.correct{
+    color: #56964f;
+}
+.incorrect{
+    color: #cb3439;
+    background-color: #ffc09b;
+    outline: 1px solid #fff;
+    border-radius: 4px;
+}
+.typing-text p span .active{
+    color: #17a2b8;
+}
+.active::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    opacity: 0;
+    border-radius: 4px;
+    background-color: #17a2b8;
+    animation: blink 1s ease-in-out infinite;
+}
+#input{
+    z-index: -899;
+    position: absolute;
+}
+@keyframes blink {
+    50%{
+        opacity: 1;
+    }
+}
